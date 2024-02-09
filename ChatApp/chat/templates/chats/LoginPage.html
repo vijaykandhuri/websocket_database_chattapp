@@ -1,0 +1,95 @@
+<!--<!DOCTYPE html>
+<html>
+<body>
+	<form method ="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<br>
+		<button type = "submit">Login</button>
+	</form>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1060&t=st=1706005963~exp=1706006563~hmac=a2dd92e2addc319677ef070a901df3cb774757749c3a0559308b25b10e5ab165') center center/cover no-repeat;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #324ea8;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #a6a832;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post" action="{% url 'login-user' %}">
+        {% csrf_token %}
+        
+        <h2>Login</h2>
+
+        <!-- Username input field -->
+        <label for="id_username">Username:</label>
+        <input type="text" id="id_username" name="username" required>
+
+        <!-- Password input field -->
+        <label for="id_password">Password:</label>
+        <input type="password" id="id_password" name="password" required>
+
+        <!-- Submit button -->
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
